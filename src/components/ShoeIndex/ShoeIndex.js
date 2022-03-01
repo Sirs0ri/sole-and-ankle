@@ -42,13 +42,33 @@ const ShoeIndex = ({ sortId, setSortId }) => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: flex;
+  /* Reversed row with the LeftColumn element at the "end" so that the tabindex starts in the MainColumn,
+   * even though LeftColumn is displayed first / on the left
+   */
+  flex-direction: row-reverse;
+  gap: 32px;
+  align-items: baseline;
+`;
 
-const LeftColumn = styled.div``;
+const LeftColumn = styled.div`
+  flex-basis: 248px;
+  display: flex;
+  flex-direction: column;
+`;
 
-const MainColumn = styled.div``;
+const MainColumn = styled.div`
+  flex: 1;
+`;
 
-const Header = styled.header``;
+const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  height: 42px;
+  justify-content: space-between;
+`;
 
 const Title = styled.h2`
   font-size: 1.5rem;
